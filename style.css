@@ -38,7 +38,7 @@ h2 {
 .poem {
     background-color: hsla(0, 0%, 0%, 0.493);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 28px;
+    padding: 28px 0px 28px 0px;
     color: rgb(241, 235, 241);
     text-align: center;
     font-size: 28px;
