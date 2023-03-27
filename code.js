@@ -1,27 +1,20 @@
-let monthInSeconds = 2628000;
-let daysInSeconds = 86400
+let daysInSeconds = 86400;
 
 function currentTime () {
     let to = new Date();
     const from = new Date(2022, 9, 24);
     let diff = to - from;
-    let pElem = document.createElement("p");
+    let pMonths = document.createElement('p');
+    let pDays = document.createElement('p')
     let sec = diff / 1000;
 
     let months = getMonthsBetween(from, to, false);
-    pElem.textContent +=  months + " Months ";
+    pMonths.textContent +=  months + " Months ";
 
-    let days = Math.floor((sec - monthInSeconds * months) / daysInSeconds);
-    pElem.innerText += (days)  + " Days ";
+    let days = Math.floor(sec / daysInSeconds);
+    pDays.textContent += (days)  + " Days ";
 
-    let hours = to.getHours();
-    pElem.textContent += " Hours " + hours
-
-    let minutes = to.getMinutes()
-    pElem.textContent += " Minutes " + minutes
-
-    document.getElementById("out").innerText = pElem.textContent;
-    let t = setTimeout(function(){ currentTime() }, 1000);
+    document.getElementById("out").append(pMonths, pDays)
 }
 
 function getMonthsBetween(date1,date2,roundUpFractionalMonths)
